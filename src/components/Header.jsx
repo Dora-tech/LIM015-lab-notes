@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from './../../src/img/logo_notes2.png';
-import logo1 from './../../src/img/cerrar-sesion.png';
+import logout from './../../src/img/cerrar-sesion.png';
 const Header = () => {
     //const imagen = '../img/cerrar-sesion.png'
     return (
@@ -10,7 +10,7 @@ const Header = () => {
             <ul className="ul-nav" id="navList">
                 <li className="li-nav">
                 <a href="#">
-                    <img src={logo1} id ='btnExit' className='logo_home'></img>Logout
+                    <img src={logout} id ='btnExit' className='logo_home'></img>Logout
                   </a>
                 </li>
             </ul>
