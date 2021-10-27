@@ -23,11 +23,17 @@ function App() {
       date: '28/11/2021',
     },
   ]);
+
+  const addNote = (text)=> {
+    // console.log(text);
+    
+  }
+
   return (
     <div >
      <Header/>
      <div className='container'>
-      <NotesList notes= {notes}/>
+      <NotesList notes= {notes} handleAddNote= {addNote}/>
      </div>
    
     </div>
