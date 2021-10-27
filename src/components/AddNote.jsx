@@ -7,7 +7,11 @@ const AddNote = ({handleAddNote}) => {
         setNoteText(event.target.value);
     };
     const handleSaveClick = () => {
-        handleAddNote(noteText);
+      if(noteText.trim().length>0){
+         handleAddNote(noteText);
+         setNoteText('');
+      }  
+       
     };
 
     return (
