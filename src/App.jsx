@@ -9,17 +9,17 @@ function App() {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
-      text: 'This is my first note!',
+      text: 'Esta es nuestra primera nota! ¡Viva!',
       date: '15/11/2021',
     },
     {
       id: nanoid(),
-      text: 'This is my second note!',
+      text: 'Esta es nuestra 2da nota! ¡Viva!!',
       date: '21/11/2021',
     },
     {
       id: nanoid(),
-      text: 'This is my third note!',
+      text: 'Esta es nuestra 3era nota! ¡Viva!!',
       date: '28/11/2021',
     },
   ]);

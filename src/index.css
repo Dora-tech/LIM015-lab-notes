@@ -68,6 +68,9 @@ header nav ul li a{
   grid-gap:1rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+.note.new {
+	background-color: #67d7cc;
+}
 .note{
   background-color: rgb(239, 248, 160);
   margin-bottom: 10px;
