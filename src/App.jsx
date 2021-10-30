@@ -1,58 +1,34 @@
 
 import React from "react";
 import { useState } from "react";
-import Header from "./components/Header";
-import NotesList from "./components/NotesList";
-import {nanoid} from 'nanoid';
+import Home from "./components/Home";
+import Logueo from "./components/Logueo";
+
+import firebaseApp from "./credenciales";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+const auth = getAuth(firebaseApp);
 function App() {
+  const [usuarioGlobal, setUsuarioGlobal] = useState(null);
 
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: 'Esta es nuestra primera nota! ¡Viva!',
-      date: '15/11/2021',
-    },
-    {
-      id: nanoid(),
-      text: 'Esta es nuestra 2da nota! ¡Viva!!',
-      date: '21/11/2021',
-    },
-    {
-      id: nanoid(),
-      text: 'Esta es nuestra 3era nota! ¡Viva!!',
-      date: '28/11/2021',
-    },
-  ]);
+  onAuthStateChanged(auth, (usuarioFirebase) => {
+    if (usuarioFirebase) {
+      //código en caso de que haya sesión inciiada
+      setUsuarioGlobal(usuarioFirebase);
+    } else {
+      //código en caso de que no haya sesión iniciada
+      setUsuarioGlobal(null);
+    }
+  });
 
-  const addNote = (text)=> {
-    // console.log(text);
-    const date = new Date();
-    const newNote = {
-      id: nanoid(),
-      text: text,
-      date: date.toLocaleDateString(),
-    };
-    const newNotes = [...notes, newNote];
-    setNotes(newNotes);
-  };
-  const deleteNote=(id)=>{
-    const newNotes = notes.filter((note)=> note.id !==id);
-    setNotes(newNotes);
-  }
   return (
-    <div >
-     <Header/>
-     <div className='container'>
-      <NotesList 
-        notes = {notes} 
-        handleAddNote= {addNote}
-        handleDeleteNote = {deleteNote}
-      />
-
-     </div>
-   
-    </div>
+    <>
+      {usuarioGlobal ? (
+        <Home correoUsuario={usuarioGlobal.email} />
+      ) : (
+        <Logueo />
+      )}
+    </>
   );
-};
+}
 
 export default App;
