@@ -5,14 +5,16 @@ import Note from './Note';
 const NotesList = ({notes, handleAddNote, handleDeleteNote}) => {
     return (
         <div className='notes-list'>
-            {notes.map((note)=>(
+            {notes?(
+            notes.map((note)=>(
                     <Note 
                         id={note.id} 
                         text={note.text} 
                         date={note.date}
                         handleDeleteNote={handleDeleteNote}    
                     />
-            ))}
+            ))
+            ):null}
             <AddNote handleAddNote={handleAddNote}/>   
         </div>
     );

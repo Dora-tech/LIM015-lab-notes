@@ -32,6 +32,24 @@ const Home = ({ correoUsuario }) => {
     },
   ]);
 
+  async function buscarDocumentOrCrearDocumento(idDocumento) {
+    //crear referencia al documento
+    const docuRef = doc(firestore, `usuarios/${idDocumento}`);
+    // buscar documento
+    const consulta = await getDoc(docuRef);
+    // revisar si existe
+    if (consulta.exists()) {
+      // si sí existe
+      const infoDocu = consulta.data();
+      return infoDocu.notas;
+    } else {
+      // si no existe
+      await setDoc(docuRef, { notas: [] });
+      const consulta = await getDoc(docuRef);
+      const infoDocu = consulta.data();
+      return infoDocu.notas;
+    }
+  }
   const addNote = (text)=> {
     // console.log(text);
     const date = new Date();
@@ -47,15 +65,30 @@ const Home = ({ correoUsuario }) => {
     const newNotes = notes.filter((note)=> note.id !==id);
     setNotes(newNotes);
   }
+
+  useEffect(() => {
+    async function fetchNotas() {
+      const notasFetchadas = await buscarDocumentOrCrearDocumento(
+        correoUsuario
+      );
+      setNotes(notasFetchadas);
+    }
+
+    fetchNotas();
+  }, []);
+
   return (
     <div >
      <Header/>
      <div className='container'>
-      <NotesList 
-        notes = {notes} 
-        handleAddNote= {addNote}
-        handleDeleteNote = {deleteNote}
-      />
+       
+          <NotesList 
+          notes = {notes} 
+          handleAddNote= {addNote}
+          handleDeleteNote = {deleteNote}
+        />
+      
+
 
      </div>
    
