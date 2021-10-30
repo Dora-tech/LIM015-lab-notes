@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import firebaseApp from "../credenciales";
 import { getAuth, signOut } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 
 import { Container, Button } from "react-bootstrap";
 
@@ -58,7 +58,17 @@ const Home = ({ correoUsuario }) => {
       text: text,
       date: date.toLocaleDateString(),
     };
-    const newNotes = [...notes, newNote];
+    let newNotes 
+    if(notes)
+       newNotes= [...notes, newNote];
+    else
+       newNotes = [newNote];
+
+    
+    // actualizar base de datos
+    const docuRef = doc(firestore, `usuarios/${correoUsuario}`);
+    updateDoc(docuRef, { notas: [...newNotes] });
+
     setNotes(newNotes);
   };
   const deleteNote=(id)=>{
