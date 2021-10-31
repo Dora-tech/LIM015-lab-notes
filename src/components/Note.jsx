@@ -19,6 +19,7 @@ const Note = ({id, text, date, handleDeleteNote}) => {
                 <MyVerticallyCenteredModal
                     show={modalShow}
                     onHide={() => setModalShow(false)}
+                    mitext={text}
                 />
                 <MdDeleteForever 
                     onClick={()=>handleDeleteNote(id)} 
