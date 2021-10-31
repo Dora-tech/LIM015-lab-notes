@@ -12,7 +12,7 @@ import {nanoid} from 'nanoid';
 const auth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 
-const Home = ({ correoUsuario }) => {
+const Home = ({ correoUsuario,nameUsuario }) => {
 
   const [notes, setNotes] = useState([
     {
@@ -91,7 +91,7 @@ const Home = ({ correoUsuario }) => {
 
   return (
     <div >
-     <Header/>
+     <Header nameUsuario = {nameUsuario}/>
      <div className='container'>
        
           <NotesList 

@@ -5,12 +5,13 @@ import firebaseApp from "../credenciales";
 import { getAuth, signOut } from "firebase/auth";
 
 const auth = getAuth(firebaseApp);
-const Header = () => {
+const Header = ({nameUsuario}) => {
     //const imagen = '../img/cerrar-sesion.png'
     return (
         <header id="header-bar-nav">
         <nav className="headerNav">
             <img className="logo-nav" src={logo}></img>
+            <h1>{nameUsuario.toUpperCase()}</h1>
             <ul className="ul-nav" id="navList">
                 <li className="li-nav">
                 <a href="#">

@@ -19,11 +19,13 @@ function App() {
       setUsuarioGlobal(null);
     }
   });
-
+  console.log(usuarioGlobal)
   return (
+    
     <>
-      {usuarioGlobal ? (
-        <Home correoUsuario={usuarioGlobal.email} />
+      {usuarioGlobal ? (        
+        <Home correoUsuario={usuarioGlobal.email}
+              nameUsuario={usuarioGlobal.displayName} />
       ) : (
         <Logueo />
       )}
