@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from "react";
 //aqui react-icons --> hay que instalar iconos.. npm install react-icons --save
 
 import {MdDeleteForever, MdOutlineOpenInNew} from 'react-icons/md';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
-const [modalShow, setModalShow] = React.useState(false);
+
 const Note = ({id, text, date, handleDeleteNote}) => {
+    const [modalShow, setModalShow] = useState(false);
     return (
         <div className='note'>
             <span>{text}</span>
