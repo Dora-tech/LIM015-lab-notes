@@ -6,7 +6,6 @@ const MyVerticallyCenteredModal = (props) => {
   //setNoteText(props.mitext)
   const handleChange = (event) =>{
     // console.log(event.target.value)
-    
         setNoteText(event.target.value);   
     
 };
