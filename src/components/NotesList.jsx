@@ -5,6 +5,7 @@ import Note from './Note';
 const NotesList = ({notes, handleAddNote, handleDeleteNote}) => {
     return (
         <div className='notes-list'>
+            <AddNote handleAddNote={handleAddNote}/>
             {notes?(
             notes.map((note)=>(
                     <Note 
@@ -15,7 +16,7 @@ const NotesList = ({notes, handleAddNote, handleDeleteNote}) => {
                     />
             ))
             ):null}
-            <AddNote handleAddNote={handleAddNote}/>   
+            
         </div>
     );
 };

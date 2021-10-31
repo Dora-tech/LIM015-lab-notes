@@ -41,6 +41,7 @@ const Home = ({ correoUsuario }) => {
     if (consulta.exists()) {
       // si sí existe
       const infoDocu = consulta.data();
+
       return infoDocu.notas;
     } else {
       // si no existe
@@ -60,7 +61,7 @@ const Home = ({ correoUsuario }) => {
     };
     let newNotes 
     if(notes)
-       newNotes= [...notes, newNote];
+       newNotes= [newNote,...notes];
     else
        newNotes = [newNote];
 
@@ -78,12 +79,11 @@ const Home = ({ correoUsuario }) => {
 
   useEffect(() => {
     async function fetchNotas() {
-      const notasFetchadas = await buscarDocumentOrCrearDocumento(
+      let notasFetchadas = await buscarDocumentOrCrearDocumento(
         correoUsuario
       );
       setNotes(notasFetchadas);
     }
-
     fetchNotas();
   }, []);
 
