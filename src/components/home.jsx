@@ -74,6 +74,8 @@ const Home = ({ correoUsuario }) => {
   };
   const deleteNote=(id)=>{
     const newNotes = notes.filter((note)=> note.id !==id);
+    const docuRef = doc(firestore, `usuarios/${correoUsuario}`);
+    updateDoc(docuRef, { notas: [...newNotes] });
     setNotes(newNotes);
   }
 
