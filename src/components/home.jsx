@@ -100,8 +100,6 @@ const Home = ({ correoUsuario }) => {
           handleDeleteNote = {deleteNote}
         />
       
-
-
      </div>
    
     </div>
