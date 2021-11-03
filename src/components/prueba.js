@@ -65,3 +65,13 @@
         </Button>
       </Stack>
     </Container>  */}
+
+
+    /*         <Button
+          variant="primary"
+          type="submit"
+          style={{ width: "300px" }}
+          onClick={() => signInWithRedirect(auth, googleProvider)}
+        >
+          Acceder con Google
+        </Button> */ 
