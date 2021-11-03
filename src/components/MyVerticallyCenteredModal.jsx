@@ -9,6 +9,12 @@ const MyVerticallyCenteredModal = (props) => {
         setNoteText(event.target.value);   
     
 };
+
+/* const styles = {
+  
+  background: "FFFFFF",
+
+}; */
     return (
         <Modal
       {...props}
@@ -24,9 +30,9 @@ const MyVerticallyCenteredModal = (props) => {
       <Modal.Body>
         <h4>Centered Modal</h4>
         {Editar
-            ? (<input 
+            ? (<input
               rows='8'
-              cols='10'
+              cols='30'
               placeholder='Escribe para agregar una nota..'
               value={noteText}  
               onChange={handleChange}            

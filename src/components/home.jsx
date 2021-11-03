@@ -89,8 +89,14 @@ const Home = ({ correoUsuario,nameUsuario }) => {
     fetchNotas();
   }, []);
 
+  const styles = {
+  
+    background: "#F2F2F2",
+    // fontSize: "32px"
+};
+
   return (
-    <div >
+    <div style={styles}>
      <Header nameUsuario = {nameUsuario}/>
      <div className='container'>
        

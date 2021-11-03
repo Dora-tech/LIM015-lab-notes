@@ -6,14 +6,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#F2F2F2;
+  /* background-color:#F2F2F2; */
+ /*  background: linear-gradient(to bottom,#ff648b, #3d58b1); */
 }
-
+/* #root{ 
+  background-color: rgba(235, 232, 232, 0.767); } */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* textarea{
+  background-color: white;
+} */
 /* ******************** login ************  */
 /* .article-login{
   display: flex;
@@ -113,6 +118,11 @@ code {
 /* ******************** header************  */
 .header-bar-nav {
   margin: 0;
+}
+h1{
+  color:white;
+  font-size: 20px; 
+  left: auto; 
 }
 .headerNav {
   background: linear-gradient(to bottom,#ff648b, #3d58b1);

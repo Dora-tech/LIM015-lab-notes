@@ -13,7 +13,7 @@
     min-height: 80vh;
     margin: 10;
   }
-  
+
   .contenedorLogin{
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@
     width: 700px;
     max-width: 100%;
     padding-bottom: 10px;
+  
   }
   .figure-login{
     display: flex;
@@ -67,35 +68,18 @@
     height:30px;
   }
   
-  
-  .btn-texto {
-    background-color: rgb(206, 191, 191);
-    border-radius: 20px;
-    display: block;
-    line-height: 25px;
-    padding: 0 10px;
-    margin: 5px auto;
-    border:0;
-    outline: none;
-    text-align: center
+  .logoFacebook {
+    width: 40px;
+    height: 40px;
+    /* padding: 0px; */
   }
   
-  .btn-signin, .btn-register{
-    background: #fab33f;
-    border-radius: 20px;
-    border: none;
-    width: 150px;
-    height:40px;
-    line-height: 25px;
-    padding: 0 10px;
-    cursor: pointer;
-    margin: 5px auto;
-    font-size: 13px;
-  }
+  
+  
   .txt {
     display: flex;
     justify-content: center;
-    color: #0C0B0B;
+    color: #faf8f8;
   }
   .a-login-signup {
     text-decoration: none;
@@ -126,21 +110,8 @@
       .frmLogin {
         margin-top: 20px;
     }
-    .btn-texto{
-        /* font-size: 30px; */
-        font-size: 25px;
-        width: 350px;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 30px;
-    }
-    .btn-signin, .btn-register{
-      font-size: 25px;
-      width: 200px;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 30px;
-    }
+   
+    
       .txt, .a-login-signup{
         font-size: 20px;
         line-height: 25px;
@@ -149,5 +120,11 @@
     .logoGmail {
       width: 30px;
       height: 30px;
+      /* padding: 20px; */
     }
+    .logoFacebook {
+        width: 40px;
+        height: 35px;
+        /* padding: 0px; */
+      }
   }

@@ -27,7 +27,7 @@ function App() {
         <Home correoUsuario={usuarioGlobal.email}
               nameUsuario={usuarioGlobal.displayName} />
       ) : (
-        <Logueo />
+        <Logueo  />
       )}
     </>
   );
